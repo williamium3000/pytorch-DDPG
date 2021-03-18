@@ -1,6 +1,5 @@
 import sys
-sys.path.append(".")
-from DDPG import network
+import network
 import copy
 import torch
 import numpy as np
@@ -94,7 +93,7 @@ class DDPG_agent():
                 param.data * decay
             )
     def save(self, name):
-        torch.save(self.model, os.path.join("DDPG", name + ".pth"))
+        torch.save(self.model, name + ".pth")
     def load(self, path):
         self.model = torch.load(path, map_location="cuda:0" if torch.cuda.is_available() else "cpu")
         self.sync_target()
