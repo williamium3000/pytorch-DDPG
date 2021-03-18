@@ -24,7 +24,7 @@ We records the reward each episode in tensorboard, feel free to check
 
 #### CartPole-v0
 Traditional CartPole-v0 involves a pole on a car and an agent is required to hold control of the car(left/right) in order to prevent the pole from falling. Each step, the agent is rewarded 1 if the pole fails to fall, with a maximum steps of 200. In our experiment, since DDPG works on continuous space, we turn the traditional one into continuous one via paddle open source code.
-![](images/CartPole-v0.gif)
+![](images/CartPole.png)
 
 #### Pendulum-v0
 Pendulum-v0 involves a pendulum starting in a random position, and the goal is to swing it up so it stays upright.
@@ -35,9 +35,11 @@ Both agents are traind for 2000 episodes using a learning rate of 0.001, BATCH_S
 It is worth mentioning that since policy network gives out a direct continuous value(an action given states), we need to add some noise to push the agents into exploring. We use a Gaussian noise with mean of 0.01 and std of 1.
 #### CartPole-v0
 We plot the reward of each episode
-
+![](images/CartPole-v0.svg)
 A demo of trained agent is followed
+![](images/CartPole-v0.gif)
 #### Pendulum-v0
 We plot the reward of each episode
-
+![](images/Pendulum-v0.svg)
 A demo of trained agent is followed
+![](images/Pendulum-v0.gif)
